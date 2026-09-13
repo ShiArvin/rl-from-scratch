@@ -1,0 +1,26 @@
+name: BC
+onpolicy: false
+
+dataset_path: ???
+dataset_format: minari
+minari_download: false
+minari_datasets_path: ./experts
+state_key: states
+action_key: actions
+
+total_epoch: 1000
+batch_size: 512
+shuffle: true
+drop_last: false
+num_workers: 2
+
+actor_lr: 3e-4
+optimizer: Adam
+hidden_sizes: [256, 256]
+activation: tanh
+rescale: true
+
+entropy_coef: 0.0
+action_eps: 1e-6
+use_grad_clip: true
+max_grad_norm: 0.5

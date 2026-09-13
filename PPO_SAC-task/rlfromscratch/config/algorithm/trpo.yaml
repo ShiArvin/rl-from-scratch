@@ -1,0 +1,31 @@
+name: TRPO
+onpolicy: true
+buffer_name: ReplayBuffer
+collect_traj: false
+trajnum: 10
+
+gae: true
+lambda_: 0.95
+
+learning_rate: 3e-4
+gamma: 0.99
+optimizer: Adam
+hidden_sizes: [64, 64]
+state_dependent_std: false
+initialize: false
+delta: 0.01
+linesearch_coeffient: 0.5
+backtracking_steps: 10
+cg_steps: 10
+eigenvalue_reg: 0.1
+
+critic_update_steps: 3
+critic_batch_size: 256
+
+rescale: false
+action_bound_method: tanh
+
+
+return_scaling: false 
+log_clip_stabilize: true
+advan_norm: true

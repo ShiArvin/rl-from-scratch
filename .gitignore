@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PyTorch checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Experiment logs
+logs/
+runs/
+wandb/
+swanlog/
+swandb/
+outputs/
+checkpoints/
+
+# Videos
+*.mp4
+*.avi
+
+# Temporary files
+*.tmp
+*.log
+
+# Secrets
+.env
+*.key
+# Local AI/tool settings
+.claude/

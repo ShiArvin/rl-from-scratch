@@ -1,0 +1,43 @@
+defaults:
+ - _self_
+ - algorithm: trpo
+ - env: mujoco
+
+
+
+
+env: 
+  name: HalfCheetah-v5
+  num_training_envs: 8
+  num_testing_envs: 8
+  obs_norm: false
+  scale: False
+
+algorithm:
+  test_epsilon: 0
+
+gamma: 0.99
+seed: 0
+use_wandb: false
+use_tensorboard: false 
+use_swanlab: true
+save_interval: 5000
+test_interval: 10
+train_log_interval: 10
+reward_buffer_size: 20
+total_epoch: 5000000 
+interact_per_epoch: 4
+update_step_per_epoch: 1
+test_episodes: 10
+train_action_deterministic: true
+start_train_step: 5000
+
+
+experiment_name: ${env.name}-${algorithm.name}
+log_dir: outputs/${experiment_name}//${now:%Y-%m-%d_%H-%M-%S}
+
+hydra:
+  run:
+    dir: outputs/${experiment_name}//${now:%Y-%m-%d_%H-%M-%S}
+
+hydra_base_dir: ""

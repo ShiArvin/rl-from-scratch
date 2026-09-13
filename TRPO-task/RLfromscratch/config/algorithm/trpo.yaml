@@ -1,0 +1,19 @@
+name: TRPO
+onpolicy: true
+buffer_name: TrajectoryRollout
+trajnum: 10
+learning_rate: 1e-3
+gamma: 0.99
+optimizer: Adam
+batch_size: 32
+hidden_sizes: [64, 64]
+delta: 0.01
+linesearch_coeffient: 0.5
+backtracking_steps: 10
+cg_steps: 10
+lambda_: 0.95
+advan_norm: true
+critic_update_steps: 5
+critic_batch_size: 256
+rescale: true
+collect_traj: false

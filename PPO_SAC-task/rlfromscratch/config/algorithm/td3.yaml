@@ -1,0 +1,27 @@
+name: TD3
+onpolicy: false
+buffer_name: ReplayBuffer
+buffer_size: 1000000
+critic_lr: 3e-4
+actor_lr: 3e-4
+critic_optimizer: Adam
+actor_optimizer: Adam
+
+double_critic: true
+use_target: true
+target_update_method: soft
+target_update_interval: 2
+target_update_tau: 0.005
+batch_size: 256
+
+
+
+hidden_sizes: [256, 256]
+activation: relu
+
+rescale: true
+action_bound_method: tanh
+
+explore_noise_sigma: 0.1
+noise_sigma: 0.2
+noise_clip: 0.5

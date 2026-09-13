@@ -1,0 +1,45 @@
+env: 
+  name: PongNoFrameskip-v4
+  num_training_envs: 1
+  num_testing_envs: 4
+  frame_stack: 4
+
+algorithm:
+  name: DQN
+  buffer_name: ReplayBuffer
+  buffer_size: 1000000
+  learning_rate: 1e-4
+  gamma: 0.99
+  optimizer: Adam
+  start_epsilon: 1
+  end_epsilon: 0.1
+  epsilon_schedular: linear
+  epsilon_timestep: 1000000
+  use_target: true
+  target_update_method: hard
+  target_update_interval: 10000
+  target_update_tau: 0.005
+  batch_size: 32
+
+
+seed: 0
+use_wandb: false
+use_tensorboard: true
+save_interval: 500000
+test_interval: 100000
+train_log_interval: 10000
+reward_buffer_size: 20
+total_epoch: 5000000 
+interact_per_epoch: 4
+test_episodes: 10
+train_action_deterministic: true
+
+
+experiment_name: ${env.name}-${algorithm.name}
+log_dir: outputs/${experiment_name}//${now:%Y-%m-%d_%H-%M-%S}
+
+hydra:
+  run:
+    dir: outputs/${experiment_name}//${now:%Y-%m-%d_%H-%M-%S}
+
+hydra_base_dir: ""
