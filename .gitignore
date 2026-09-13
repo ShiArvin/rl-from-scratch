@@ -44,3 +44,5 @@ checkpoints/
 *.key
 # Local AI/tool settings
 .claude/
+# Personal experiment reports
+*.pdf
