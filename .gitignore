@@ -46,3 +46,7 @@ checkpoints/
 .claude/
 # Personal experiment reports
 *.pdf
+# Public experiment reports
+!DQN-task/DQN_Report.pdf
+!TRPO-task/TRPO_Report.pdf
+!PPO_SAC-task/PPO_SAC_Report.pdf
